@@ -1,0 +1,12 @@
+Issue key,Issue Type,Summary,Priority,Labels,Epic Link,Description,Story Points
+AUTH-003,Story,권한 기반 라우트 보호,High,auth;p1,EPIC-AUTH,"미로그인 접근 차단 및 보호 라우트 문서화",3
+AUTH-004,Story,계정 탈퇴 플로우,High,auth;p1,EPIC-AUTH,"탈퇴 확인/재가입 정책 반영",5
+BILL-004,Story,구독 실패 자동 재시도,High,billing;p1,EPIC-BILLING,"D+1,D+3,D+7 재시도 및 실패 알림",5
+BILL-005,Story,결제수단 변경 유도 화면,High,billing;p1,EPIC-BILLING,"실패 사용자 전용 CTA 및 재결제 경로",3
+WH-003,Story,웹훅 서명 검증,High,webhook;p1,EPIC-WEBHOOK,"서명 검증 실패 401 처리 및 로그 저장",3
+WH-004,Story,웹훅 Dead-letter 처리,High,webhook;p1,EPIC-WEBHOOK,"실패 이벤트 보관 및 수동 재처리 도구",5
+OPS-002,Story,부분 환불 지원,High,ops;p1,EPIC-OPS,"잔액 계산 및 누적 환불 한도 체크",5
+OPS-003,Story,구독 해지 정책 분기,High,ops;p1,EPIC-OPS,"즉시 해지/기간만료 해지 정책 구현",5
+LEGAL-003,Story,정책 변경 시 재동의 강제,High,legal;p1,EPIC-LEGAL,"최신 버전 미동의 사용자 차단/유도",5
+REL-003,Story,Rate Limit 및 보안 헤더,High,reliability;p1,EPIC-RELIABILITY,"결제/웹훅 API rate limit 및 보안 헤더 적용",3
+REL-004,Story,백업/복구 Runbook,High,reliability;p1,EPIC-RELIABILITY,"복구 절차 문서 및 월간 리허설 체크리스트",3

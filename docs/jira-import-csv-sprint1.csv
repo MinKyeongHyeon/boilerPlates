@@ -1,0 +1,13 @@
+Issue key,Issue Type,Summary,Priority,Labels,Epic Link,Description,Story Points
+AUTH-001,Story,OAuth 로그인 실패/취소 처리 고도화,Highest,auth;p0,EPIC-AUTH,"실패 코드별 사용자 메시지 분리 및 콜백 예외 처리",3
+AUTH-002,Story,세션 만료 자동 복구,Highest,auth;p0,EPIC-AUTH,"세션 만료 감지 후 자동 갱신, 실패 시 안전 로그아웃",3
+BILL-001,Story,결제 상태 머신 도입,Highest,billing;p0,EPIC-BILLING,"pending/succeeded/failed/canceled/refunded 상태 전이 규칙 적용",5
+BILL-002,Story,정기결제 빌링키 발급/첫 과금 서버 처리 안정화,Highest,billing;p0,EPIC-BILLING,"issue/charge API 에러 표준화 및 실패 대응",5
+BILL-003,Story,결제 승인 API 검증 및 저장,Highest,billing;p0,EPIC-BILLING,"승인 성공/실패 저장 및 중복 orderId 차단",5
+WH-001,Story,토스 웹훅 엔드포인트 구현,Highest,webhook;p0,EPIC-WEBHOOK,"이벤트 수신/파싱/저장/상태 반영",5
+WH-002,Story,웹훅 idempotency 보장,Highest,webhook;p0,EPIC-WEBHOOK,"eventId unique 제약으로 중복 무해 처리",3
+OPS-001,Story,환불 요청/승인 플로우,Highest,ops;p0,EPIC-OPS,"환불 상태 관리 및 토스 취소 API 연동",5
+LEGAL-001,Story,약관/개인정보 버전 테이블 구축,Highest,legal;p0,EPIC-LEGAL,"policy_versions 스키마 및 활성 버전 조회",3
+LEGAL-002,Story,사용자 동의 이력 저장,Highest,legal;p0,EPIC-LEGAL,"policy_consents 저장 및 최신 동의 조회",3
+REL-001,Story,Sentry 연동,Highest,reliability;p0,EPIC-RELIABILITY,"FE/BE 에러 수집 및 릴리즈 태그 설정",3
+REL-002,Story,구조화 로그/감사 로그 스키마 적용,Highest,reliability;p0,EPIC-RELIABILITY,"결제/환불/관리자 작업 로그 적재",3
