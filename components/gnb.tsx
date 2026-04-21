@@ -4,17 +4,24 @@ import Link from "next/link";
 import { useState } from "react";
 import { AuthProvider } from "@/components/auth-provider";
 import { DeleteAccountButton } from "@/components/delete-account-button";
-import { LegalConsentBanner } from "@/components/legal-consent-banner";
-import { LegalModal } from "@/components/legal-modal";
+import { LegalConsentBanner } from "@/features/legal/components/legal-consent-banner";
+import { LegalModal } from "@/features/legal/components/legal-modal";
 import { supabase } from "@/lib/supabase-client";
 import { useAuthStore } from "@/store/auth-store";
+
+// 범용적으로 사용 가능한 OAuth 공급자 Config
+const OAUTH_PROVIDERS = [
+  { id: "kakao", label: "카카오 로그인", bgColor: "bg-yellow-300", textColor: "text-black" },
+  { id: "naver", label: "네이버 로그인", bgColor: "bg-green-600", textColor: "text-white" },
+  // 구글 등을 쉽게 추가 가능: { id: "google", label: "Google 로그인", bgColor: "bg-white", textColor: "text-black" }
+] as const;
 
 export function Gnb() {
   const session = useAuthStore((state) => state.session);
   const isLoading = useAuthStore((state) => state.isLoading);
   const [modalType, setModalType] = useState<"terms" | "privacy" | null>(null);
 
-  const signIn = async (provider: "kakao" | "naver") => {
+  const signIn = async (provider: string) => {
     await supabase.auth.signInWithOAuth({
       provider: provider as never,
       options: {
@@ -53,20 +60,16 @@ export function Gnb() {
             </button>
             {!isLoading && !session && (
               <>
-                <button
-                  className="rounded-md bg-yellow-300 px-3 py-2 text-sm font-semibold text-black"
-                  onClick={() => signIn("kakao")}
-                  type="button"
-                >
-                  카카오 로그인
-                </button>
-                <button
-                  className="rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white"
-                  onClick={() => signIn("naver")}
-                  type="button"
-                >
-                  네이버 로그인
-                </button>
+                {OAUTH_PROVIDERS.map((provider) => (
+                  <button
+                    key={provider.id}
+                    className={`rounded-md px-3 py-2 text-sm font-semibold ${provider.bgColor} ${provider.textColor}`}
+                    onClick={() => signIn(provider.id)}
+                    type="button"
+                  >
+                    {provider.label}
+                  </button>
+                ))}
               </>
             )}
             {!isLoading && session && (
